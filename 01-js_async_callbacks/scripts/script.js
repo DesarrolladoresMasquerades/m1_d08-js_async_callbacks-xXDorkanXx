@@ -58,10 +58,15 @@ function onButton3Click(){
 const counter = document.getElementById("counter");
 
 const myInterval = setInterval(
-    () => {counter.innerText = parseInt(counter.innerText) + 1},
+    () => {counter.innerText = parseInt(counter.innerText) + 1}, // ()=> counter.textContent++
     1 * 1000
 );
 
 // only way to stop the clock
 
 const stopCounter = ()=> clearInterval(myInterval);
+
+setTimeout(
+    ()=> clearInterval(myInterval),
+    20 * 1000
+)
