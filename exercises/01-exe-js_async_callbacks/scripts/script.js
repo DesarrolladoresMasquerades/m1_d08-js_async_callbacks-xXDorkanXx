@@ -7,7 +7,7 @@ function print() {
     console.log(4);
   }
   
-  print(); 
+  print(); // 1, 4, 3, 2
   
   // ------------------------------------------------------------------------
   
@@ -16,5 +16,47 @@ function print() {
   // - For every number divisible by 3 it prints BOOM!!
   // - For every number divisible by 5 it prints a BANG!!
   // - Forevery number divisible for 3 and 5 it prints BOOM BANG!! 
+
+  function blast(){
+
+    let counter = 0;
+
+    const theInterval = setInterval(
+
+      () => {
+
+        counter++;
+
+        for(let i = 1; i < 16; i++){
+          if(i % 3 === 0 && i % 5 === 0){
+            console.log("BOOM BBANG!!")
+          } else if(i % 3 === 0){
+            console.log("BOOM!!")
+          } else if(i % 5 === 0){
+            console.log("BANG!!")
+          }
+        }
+      },
+      1000
+    )
+
+    if(counter === 5){
+      clearInterval(theInterval)
+    }
+
+    /*
+    setTimeout(
+      () => {clearInterval(theInterval)},
+      10 * 1000
+    );
+    */
+
+  };
+
+  blast();
+
+  
+
+ 
   
   
