@@ -18,8 +18,14 @@ function print() {
   // - Forevery number divisible for 3 and 5 it prints BOOM BANG!! 
 
   function blast(){
+
+    let counter = 0;
+
     const theInterval = setInterval(
+
       () => {
+
+        counter++;
 
         for(let i = 1; i < 16; i++){
           if(i % 3 === 0 && i % 5 === 0){
@@ -34,10 +40,16 @@ function print() {
       1000
     )
 
+    if(counter === 5){
+      clearInterval(theInterval)
+    }
+
+    /*
     setTimeout(
       () => {clearInterval(theInterval)},
       10 * 1000
     );
+    */
 
   };
 
