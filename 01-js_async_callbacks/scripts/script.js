@@ -58,7 +58,12 @@ function onButton3Click(){
 const counter = document.getElementById("counter");
 
 const myInterval = setInterval(
-    () => {counter.innerText = parseInt(counter.innerText) + 1}, // ()=> counter.textContent++
+    () => {                                                         // ()=> counter.textContent++
+        counter.innerText = parseInt(counter.innerText) + 1;
+        if(counter.innerText === "20"){
+            clearInterval(myInterval)
+        }
+    },
     1 * 1000
 );
 
@@ -66,7 +71,11 @@ const myInterval = setInterval(
 
 const stopCounter = ()=> clearInterval(myInterval);
 
+
+
+/*
 setTimeout(
     ()=> clearInterval(myInterval),
     20 * 1000
 )
+*/
